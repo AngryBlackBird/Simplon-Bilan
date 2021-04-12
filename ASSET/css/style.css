@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap');
+body {
+    margin: 0;
+    background-color: rgb(251, 252, 250);
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+nav {
+    height: 8vh;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+nav a {
+    background-color: black;
+    color: rgb(251, 252, 250);
+    font-size: x-large;
+    font-family: 'Sansita', sans-serif;
+    margin-right: 5%;
+    padding: 1px 15px 5px 15px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+.homePict {
+    position: absolute;
+    top: 25%;
+    width: 500px;
+}
+
+.homePict img {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+#home h1 {
+    color: rgb(8, 96, 102);
+    font-family: 'Playfair Display', serif;
+    font-size: 7rem;
+    margin: 0;
+}
+
+#home a {
+    background-color: rgb(8, 96, 102);
+    color: rgb(251, 252, 250);
+    font-size: x-large;
+    font-family: 'Sansita', sans-serif;
+    padding: 1px 15px 5px 15px;
+    margin-top: 45px;
+}
+
+#about {
+    width: 100%;
+    display: flex;
+    font-family: 'Source Serif Pro', serif;
+    background-color: rgba(8, 96, 102, 0.336);
+}
+
+#about img {
+    width: 50%;
+}
+
+#about div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#about h2 {
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+
+#about p {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 15%;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#content {
+    font-family: 'Source Serif Pro', serif;
+    margin-top: 5%;
+}
+
+#content h2 {
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+#content .select {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+    font-size: large;
+}
+
+#content select {
+    padding: 5px;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(8, 96, 102);
+    font-size: large;
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari and Chrome */
+    appearance: none;
+}
+
+#content .filtre {
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+.contentCard {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 5%;
+}
+
+.card {
+    max-width: 300px;
+    min-height: 350px;
+    background-color: rgba(8, 96, 102, 0.336);
+    box-shadow: 14px 16px 40px -1px rgba(174, 174, 174, 0.66);
+    -webkit-box-shadow: 14px 16px 40px -1px rgba(174, 174, 174, 0.66);
+    -moz-box-shadow: 14px 16px 40px -1px rgba(174, 174, 174, 0.66);
+    margin: 15px;
+    border-radius: 5px;
+}
+
+.card a {
+    color: black;
+}
+
+.card img {
+    max-width: 100%;
+}
+
+.card div {
+    position: relative;
+}
+
+.card h4 {
+    position: absolute;
+    top: -30%;
+    left: 74%;
+}
+
+.card h3 {
+    margin: 5% 5% 5% 15%;
+}
+
+.card p {
+    margin: 5% 5% 5% 10%;
+}
+
+footer {
+    margin-top: 5%;
+    padding: 5px;
+    text-align: center;
+    background-color: rgb(8, 96, 102);
+    font-family: 'Source Serif Pro', serif;
+}
+
+footer h4 {
+    margin: 15px 0 15px 0;
+}
+
+footer p {
+    margin: 15px 0 0 0;
+}
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/*************************  PAGE CONNECTION ********************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+#connect {
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#connect form {
+    width: 100%;
+    text-align: center;
+}
+
+#connect div {
+    width: 100%;
+    text-align: center;
+}
+
+#connect input {
+    height: 2rem;
+    width: 60%;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(168, 168, 168);
+    padding: 5px 0 5px 15px;
+}
+
+#connect button {
+    width: 30%;
+    padding: 5px 0 5px 0;
+    color: white;
+    font-family: 'Source Serif Pro', serif;
+    font-size: large;
+    background-color: rgb(8, 96, 102);
+    margin: 2%;
+    text-align: center;
+    border: none;
+}
