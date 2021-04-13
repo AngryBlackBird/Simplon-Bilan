@@ -10,11 +10,7 @@
 
 	<title>Document</title>
 
-	<title>
-
-	</title>
-
-
+	<script src="ASSET/js/script.js"></script>
 
 </head>
 

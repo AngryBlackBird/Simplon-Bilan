@@ -41,23 +41,23 @@
         mail VARCHAR(250) UNIQUE,
         pass VARCHAR(255),
         role INT,
-        dateRecuperates DATE,
-        tokenRecuperates VARCHAR(255),
         PRIMARY KEY (pseudo)
         )");
 
-        $bdd->query("CREATE TABLE IF NOT EXISTS client (
+        $bdd->query("CREATE TABLE IF NOT EXISTS content (
         id INT NOT NULL AUTO_INCREMENT, 
         name VARCHAR(30),
-        lastname VARCHAR(30),
-        mail VARCHAR(250),
+        description VARCHAR(255),
+        content VARCHAR(255),
+        practice VARCHAR(30),
+        speciality VARCHAR(30),
+        type VARCHAR(30),
+        picutre VARCHAR(255),
         time DATE,
         PRIMARY KEY (id))");
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
-
-
 
     ?>
 </body>

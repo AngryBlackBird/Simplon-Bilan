@@ -21,7 +21,5 @@
 			<p>Mot de passe oublier ? <a style="color:red!important" href="?page=recoveryPass">Réinitialiser mot de passe. </a></p>
 
 		</form>
-
-
 	</section>
 </main>

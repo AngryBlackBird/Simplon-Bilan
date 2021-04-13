@@ -18,7 +18,6 @@ class root
         $controller = new formController;
         $result = $controller->connect();
 
-
         $view = new formView();
         $view->connect($result);
     }
@@ -27,7 +26,38 @@ class root
     public function accueil()
     {
 
+        $controller = new contentController;
+        $result = $controller->viewAllContent();
+        $resultType = $controller->viewAllFilterByDistinct();
+
         $view = new accueilView();
-        $view->accueil();
+        $view->accueil($result, $resultType);
+    }
+    public function admin()
+    {
+        if (isset($_SESSION["pseudo"])) {
+
+
+            $controller = new contentController;
+            $view = new adminView();
+            $view->adminHeader();
+
+            $result = $controller->viewAllContent();
+            $controller = new contentController;
+            $resultType = $controller->viewAllFilterByDistinct();
+
+
+            $view->adminAllView($result, $resultType);
+            $view->adminFooter();
+        } else {
+            header("Location: ?page=connect");
+        }
+    }
+    public function insertContent()
+    {
+        $controller = new contentController;
+        $view = new adminView();
+        $array =  $controller->insertOneContent();
+        $view->insertContent($array);
     }
 }

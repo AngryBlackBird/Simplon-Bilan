@@ -18,7 +18,7 @@ class contentModel
 
     public function viewAllContentByOrder($order)
     {
-        $alldata  =  $this->bdd->prepare("SELECT id, name, lastname, mail, time FROM client ORDER BY :A");
+        $alldata  =  $this->bdd->prepare("SELECT *  FROM content ORDER BY :A");
         $alldata->bindParam(":A", $order);
 
         $alldata->execute();
@@ -69,19 +69,62 @@ class contentModel
         return $reponse;
     }
 
-    public function insertOneContent($name, $lastname, $mail, $time)
+    public function insertOneContent($name, $pratique, $specialite, $photo, $type, $description, $content)
     {
-        $update  =  $this->bdd->prepare("INSERT INTO client SET name = :A,
-                                                            lastname = :B,
-                                                            mail = :C,
-                                                            time = :D ");
+        $update  =  $this->bdd->prepare("INSERT INTO content SET name = :A,
+                                                            description = :B,
+                                                            content = :C,
+                                                            practice = :D,
+                                                            speciality = :E,
+                                                            type = :F,
+                                                            picutre = :G,
+                                                            time = NOW()
+                                                           ");
         $update->bindParam(":A", $name);
-        $update->bindParam(":B", $lastname);
-        $update->bindParam(":C", $mail);
-        $update->bindParam(":D", $time);
+        $update->bindParam(":B", $description);
+        $update->bindParam(":C", $content);
+        $update->bindParam(":D", $pratique);
+        $update->bindParam(":E", $specialite);
+        $update->bindParam(":F", $type);
+        $update->bindParam(":G", $photo);
+
 
 
         $reponse =  $update->execute();
+
+
+        return $reponse;
+    }
+
+    public function viewAllTypeByDistinct()
+    {
+        $alldata  =  $this->bdd->prepare("SELECT DISTINCT  type  FROM content ");
+
+
+        $alldata->execute();
+        $reponse = $alldata->fetchAll();
+
+
+        return $reponse;
+    }
+    public function viewAllPracticeByDistinct()
+    {
+        $alldata  =  $this->bdd->prepare("SELECT DISTINCT  practice  FROM content ");
+
+
+        $alldata->execute();
+        $reponse = $alldata->fetchAll();
+
+
+        return $reponse;
+    }
+    public function viewAllSpecialityByDistinct()
+    {
+        $alldata  =  $this->bdd->prepare("SELECT DISTINCT  speciality  FROM content ");
+
+
+        $alldata->execute();
+        $reponse = $alldata->fetchAll();
 
 
         return $reponse;

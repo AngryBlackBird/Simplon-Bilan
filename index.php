@@ -13,6 +13,8 @@ if (isset($_GET["page"])) {
         $root->accueil();
     } elseif ($_GET["page"] == "admin") {
         $root->admin();
+    } elseif ($_GET["page"] == "insertContent") {
+        $root->insertContent();
     }
 } elseif (empty($_GET)) {
     $root->accueil();

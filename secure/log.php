@@ -2,5 +2,5 @@
 
   $servername = "localhost";
   $username = "root";
-  $password = "root";
-  $dbname = "test1";
+  $password = "";
+  $dbname = "bilan";
