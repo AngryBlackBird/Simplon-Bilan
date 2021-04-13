@@ -31,7 +31,7 @@ class contentModel
 
     public function viewOneContentById($id)
     {
-        $alldata  =  $this->bdd->prepare("SELECT id, name, lastname, mail, time FROM client WHERE id = :A");
+        $alldata  =  $this->bdd->prepare("SELECT * FROM content WHERE id = :A");
         $alldata->bindParam(":A", $id);
 
         $alldata->execute();
@@ -41,7 +41,7 @@ class contentModel
 
     public function deleteContentByMail($id)
     {
-        $delete  =  $this->bdd->prepare("DELETE FROM client WHERE id = :A");
+        $delete  =  $this->bdd->prepare("DELETE FROM content WHERE id = :A");
         $delete->bindParam(":A", $id);
 
         $reponse =  $delete->execute();
@@ -50,18 +50,25 @@ class contentModel
         return $reponse;
     }
 
-    public function updateOneContent($name, $lastname, $mail, $time, $id)
+    public function updateOneContent($name, $pratique, $specialite, $photo, $type, $description, $content, $id)
     {
-        $update  =  $this->bdd->prepare("UPDATE client SET name = :A,
-                                                            lastname = :B,
-                                                            mail = :C,
-                                                            time = :D 
-                                                            WHERE id = :E");
+        $update  =  $this->bdd->prepare("UPDATE content SET  name = :A,
+                                                            description = :B,
+                                                            content = :C,
+                                                            practice = :D,
+                                                            speciality = :E,
+                                                            type = :F,
+                                                            picutre = :G,
+                                                            time = NOW()
+                                                            WHERE id = :H");
         $update->bindParam(":A", $name);
-        $update->bindParam(":B", $lastname);
-        $update->bindParam(":C", $mail);
-        $update->bindParam(":D", $time);
-        $update->bindParam(":E", $id);
+        $update->bindParam(":B", $description);
+        $update->bindParam(":C", $content);
+        $update->bindParam(":D", $pratique);
+        $update->bindParam(":E", $specialite);
+        $update->bindParam(":F", $type);
+        $update->bindParam(":G", $photo);
+        $update->bindParam(":H", $id);
 
         $reponse =  $update->execute();
 
@@ -72,14 +79,15 @@ class contentModel
     public function insertOneContent($name, $pratique, $specialite, $photo, $type, $description, $content)
     {
         $update  =  $this->bdd->prepare("INSERT INTO content SET name = :A,
-                                                            description = :B,
-                                                            content = :C,
-                                                            practice = :D,
-                                                            speciality = :E,
-                                                            type = :F,
-                                                            picutre = :G,
-                                                            time = NOW()
-                                                           ");
+                                                                description = :B,
+                                                                content = :C,
+                                                                practice = :D,
+                                                                speciality = :E,
+                                                                type = :F,
+                                                                picutre = :G,
+                                                                time = NOW(),
+                                                                published = 0
+                                                            ");
         $update->bindParam(":A", $name);
         $update->bindParam(":B", $description);
         $update->bindParam(":C", $content);
@@ -125,6 +133,36 @@ class contentModel
 
         $alldata->execute();
         $reponse = $alldata->fetchAll();
+
+
+        return $reponse;
+    }
+
+    public function publishedContentON($id)
+    {
+        $one = 1;
+
+        $update  =  $this->bdd->prepare("UPDATE content SET  published = :A
+                                                            WHERE id = :B");
+        $update->bindParam(":A", $one);
+        $update->bindParam(":B", $id);
+
+        $reponse =  $update->execute();
+
+
+        return $reponse;
+    }
+
+    public function publishedContentOFF($id)
+    {
+        $one = 0;
+        $update  =  $this->bdd->prepare("UPDATE content SET  published = :A
+                                                          
+                                                            WHERE id = :H");
+        $update->bindParam(":A", $one);
+        $update->bindParam(":H", $id);
+
+        $reponse =  $update->execute();
 
 
         return $reponse;

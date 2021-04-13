@@ -42,12 +42,26 @@ class root
             $view = new adminView();
             $view->adminHeader();
 
-            $result = $controller->viewAllContent();
-            $controller = new contentController;
-            $resultType = $controller->viewAllFilterByDistinct();
 
 
-            $view->adminAllView($result, $resultType);
+            if (isset($_GET["delete"])) {
+                
+                $delete = $controller->deleteContent();
+
+            } else if (isset($_GET["modify"])) {
+                $message = $controller->updateOneContent();
+                $oneContent = $controller->viewOneContent();
+                $view->modifyContent($oneContent, $message);
+            } else {
+
+                $check = $controller->publishedContent();
+
+                $result = $controller->viewAllContent();
+                $controller = new contentController;
+                $resultType = $controller->viewAllFilterByDistinct();
+
+                $view->adminAllView($result, $resultType);
+            }
             $view->adminFooter();
         } else {
             header("Location: ?page=connect");
@@ -55,9 +69,14 @@ class root
     }
     public function insertContent()
     {
-        $controller = new contentController;
-        $view = new adminView();
-        $array =  $controller->insertOneContent();
-        $view->insertContent($array);
+        if (isset($_SESSION["pseudo"])) {
+
+            $controller = new contentController;
+            $view = new adminView();
+            $array =  $controller->insertOneContent();
+            $view->insertContent($array);
+        } else {
+            header("Location: ?page=connect");
+        }
     }
 }

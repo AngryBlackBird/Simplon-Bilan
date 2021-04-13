@@ -145,8 +145,10 @@ a:link {
 }
 
 .card {
+    min-width: 300px;
     max-width: 300px;
-    min-height: 350px;
+    min-height: 400px;
+    max-height: 400px;
     background-color: rgba(8, 96, 102, 0.336);
     box-shadow: 14px 16px 40px -1px rgba(174, 174, 174, 0.66);
     -webkit-box-shadow: 14px 16px 40px -1px rgba(174, 174, 174, 0.66);
@@ -159,8 +161,17 @@ a:link {
     color: black;
 }
 
+.card .card1 {
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    max-height: 200px;
+    overflow: hidden
+}
+
 .card img {
     max-width: 100%;
+    min-height: 100%;
 }
 
 .card div {
@@ -299,7 +310,6 @@ footer p {
     color: rgb(0, 0, 0);
     padding: 2px 4px 0px 4px;
 }
-
 
 /***************************************************************************/
 

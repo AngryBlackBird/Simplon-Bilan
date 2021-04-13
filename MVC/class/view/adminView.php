@@ -23,4 +23,10 @@ class adminView
         include_once "MVC/vues/one.php";
         include_once "MVC/vues/header-footer/footer.php";
     }
+    public function modifyContent($array, $message)
+    {
+        include_once "MVC/vues/header-footer/header.php";
+        include_once "MVC/vues/two.php";
+        include_once "MVC/vues/header-footer/footer.php";
+    }
 }

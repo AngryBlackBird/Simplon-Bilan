@@ -11,28 +11,32 @@ window.onload = function () {
     let specialityOption = speciality.querySelectorAll("option")
     let practiceOption = practice.querySelectorAll("option")
 
-
     let allCard = document.querySelectorAll('.card')
 
-    console.log(allCard[0].classList)
-
-
+    array = [
+        ["speciality", ""],
+        ["type", ""],
+        ["practiceF", ""]
+    ]
 
     function filterController(data) {
-        /*console.log(data["target"].text)
-        console.log(data["target"].parentNode.id)*/
-
-        if (data["target"].parentNode.id == "selectPractice") {
-            console.log("selectPractice")
-
-
-
+        if (data["target"].parentNode.id == practice.id) {
+            array[2].splice(1, 1, data["target"].value)
         }
-        if (data["target"].parentNode.id == "selectSpeciality") {
-            console.log("selectSpeciality")
+
+        if (data["target"].parentNode.id == type.id) {
+            array[1].splice(1, 1, data["target"].value)
         }
-        if (data["target"].parentNode.id == "selectType") {
-            console.log("selectType")
+        if (data["target"].parentNode.id == speciality.id) {
+            array[0].splice(1, 1, data["target"].value)
+        }
+
+        for (var i = 0, len = allCard.length; i < len; i++) {
+            if (allCard[i].className.includes(array[0][1]) && allCard[i].className.includes(array[1][1]) && allCard[i].className.includes(array[2][1])) {
+                allCard[i].style.display = "block"
+            } else {
+                allCard[i].style.display = "none"
+            }
         }
     }
 
@@ -42,10 +46,10 @@ window.onload = function () {
             list[i].addEventListener(event, filterController.bind(list[i]), false)
         }
     }
-
-    addEventListenerList(typeOption, 'click', 'type');
-    addEventListenerList(specialityOption, 'click', 'speciality');
     addEventListenerList(practiceOption, 'click', 'practice');
+    addEventListenerList(specialityOption, 'click', 'speciality');
+    addEventListenerList(typeOption, 'click', 'type');
+
 
 
 

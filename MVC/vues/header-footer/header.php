@@ -9,8 +9,11 @@
 	<link rel="stylesheet" href="ASSET/css/style.css">
 
 	<title>Document</title>
+	<script src="https://cdn.ckeditor.com/4.16.0/basic/ckeditor.js"></script>
 
-	<script src="ASSET/js/script.js"></script>
+	<script src="ASSET/js/script.js" defer></script>
+	<script src="ASSET/js/scriptInsert.js" defer></script>
+
 
 </head>
 

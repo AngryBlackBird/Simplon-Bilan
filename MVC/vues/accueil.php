@@ -29,8 +29,10 @@
             <div class="filtre">
                 <label for="Pratiques-select">Votre pratique allimentaire :</label>
                 <select id="selectPractice">
+                    <option value="" disabled selected>Pratique allimentaire</option>
+
                     <?php if (isset($resultType)) :
-                        $count2 = count($resultType);
+                        $count2 = count($resultType[1]);
                         for ($i = 0; $i < $count2; $i++) :
                     ?>
                             <option value="<?php echo $resultType[1][$i]["practice"] ?>"><?php echo $resultType[1][$i]["practice"] ?></option>
@@ -44,13 +46,13 @@
                 <label for="Pratiques-select">Votre spécialité : </label>
 
                 <select id="selectSpeciality">
+                    <option value="" disabled selected>Votre specialité</option>
                     <?php if (isset($resultType)) :
-                        $count2 = count($resultType);
+                        $count2 = count($resultType[2]);
                         for ($i = 0; $i < $count2; $i++) :
                     ?>
                             <option value="<?php echo $resultType[2][$i]["speciality"] ?>"><?php echo $resultType[2][$i]["speciality"] ?></option>
                     <?php
-
                         endfor;
                     endif; ?>
                 </select>
@@ -60,8 +62,10 @@
                 <label for="Pratiques-select">Votre type de plat :</label>
 
                 <select id="selectType">
+                    <option value="" disabled selected>Type de plat</option>
+
                     <?php if (isset($resultType)) :
-                        $count2 = count($resultType);
+                        $count2 = count($resultType[0]);
                         for ($i = 0; $i < $count2; $i++) :
                     ?>
                             <option value="<?php echo $resultType[0][$i]["type"] ?>"><?php echo  $resultType[0][$i]["type"] ?></option>
@@ -74,27 +78,27 @@
         </div>
 
         <div class="contentCard">
-
             <?php
-
             if (isset($data)) :
                 $count = count($data);
                 for ($i = 0; $i < $count; $i++) :
-
+                    if ($data[$i]["published"] == "1") :
             ?>
-                    <div class="card <?php echo $data[$i]["type"] . " " . $data[$i]["speciality"] . " " . $data[$i]["practice"] ?>">
-                        <a href="#">
-                            <img src="<?php echo $data[$i]["picutre"] ?>" alt="">
-                            <div>
-                                <h3><?php echo $data[$i]["name"] ?></h3>
-                                <h4><?php echo $data[$i]["type"] ?></h4>
-                                <p><?php echo $data[$i]["description"] ?></p>
-                            </div>
-                        </a>
-                    </div>
+                        <div class="card <?php echo $data[$i]["type"] . " " . $data[$i]["speciality"] . " " . $data[$i]["practice"] ?>">
+                            <a href="#">
+                                <div class="card1">
+                                    <img src="<?php echo $data[$i]["picutre"] ?>" alt="">
+                                </div>
+                                <div class="card2">
+                                    <h3><?php echo $data[$i]["name"] ?></h3>
+                                    <h4><?php echo $data[$i]["type"] ?></h4>
+                                    <p><?php echo $data[$i]["description"] ?></p>
+                                </div>
+                            </a>
+                        </div>
 
             <?php
-
+                    endif;
                 endfor;
             endif; ?>
 
