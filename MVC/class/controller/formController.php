@@ -44,4 +44,9 @@ class formController
             }
         }
     }
+    public function deconnect()
+    {
+        session_destroy();
+        header("Location: /Bilan");
+    }
 }

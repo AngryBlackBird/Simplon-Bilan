@@ -15,6 +15,10 @@ if (isset($_GET["page"])) {
         $root->admin();
     } elseif ($_GET["page"] == "insertContent") {
         $root->insertContent();
+    } elseif ($_GET["page"] == "article") {
+        $root->article();
+    } elseif ($_GET["page"] == "deconnect") {
+        $root->deconnect();
     }
 } elseif (empty($_GET)) {
     $root->accueil();

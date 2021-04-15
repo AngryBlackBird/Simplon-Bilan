@@ -21,11 +21,15 @@ class root
         $view = new formView();
         $view->connect($result);
     }
+    public function deconnect()
+    {
+        $controller = new formController;
 
+        $controller->deconnect();
+    }
 
     public function accueil()
     {
-
         $controller = new contentController;
         $result = $controller->viewAllContent();
         $resultType = $controller->viewAllFilterByDistinct();
@@ -42,12 +46,9 @@ class root
             $view = new adminView();
             $view->adminHeader();
 
-
-
             if (isset($_GET["delete"])) {
-                
-                $delete = $controller->deleteContent();
 
+                $delete = $controller->deleteContent();
             } else if (isset($_GET["modify"])) {
                 $message = $controller->updateOneContent();
                 $oneContent = $controller->viewOneContent();
@@ -75,8 +76,16 @@ class root
             $view = new adminView();
             $array =  $controller->insertOneContent();
             $view->insertContent($array);
+            header("Location: ?page=admin");
         } else {
             header("Location: ?page=connect");
         }
+    }
+    public function article()
+    {
+        $controller = new contentController;
+        $view = new accueilView();
+        $array =  $controller->article();
+        $view->article($array);
     }
 }

@@ -214,4 +214,10 @@ class contentController
             $data  = $content->publishedContentOFF($_POST["checkId"]);
         }
     }
+    public function article()
+    {
+        $content = new contentModel;
+        $data  = $content->viewOneContentById($_GET["vu"]);
+        return $data;
+    }
 }

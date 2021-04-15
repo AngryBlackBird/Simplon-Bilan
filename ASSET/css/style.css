@@ -3,13 +3,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap');
 body {
     margin: 0;
-    background-color: rgb(251, 252, 250);
+    background-color: rgb(255, 255, 255);
 }
 
 header {
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+}
+
+header svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 25px 0px;
+}
+
+header img {
+    width: 125px;
+    margin: 0 0 0 25px;
 }
 
 nav {
@@ -24,7 +41,7 @@ nav a {
     color: rgb(251, 252, 250);
     font-size: x-large;
     font-family: 'Sansita', sans-serif;
-    margin-right: 5%;
+    margin: 25px;
     padding: 1px 15px 5px 15px;
 }
 
@@ -32,7 +49,7 @@ a:link {
     text-decoration: none;
 }
 
-#home {
+#home .contentHome {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,14 +60,19 @@ a:link {
 
 .homePict {
     position: absolute;
-    top: 25%;
-    width: 500px;
+    top: 15%;
+    width: 700px;
 }
 
 .homePict img {
     position: absolute;
     width: 100%;
     z-index: -1;
+    opacity: 0;
+}
+
+.homePict img:first-child {
+    opacity: 1;
 }
 
 #home h1 {
@@ -69,18 +91,45 @@ a:link {
     margin-top: 45px;
 }
 
+#home .bgColor {
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    background-color: #f1efde;
+    z-index: -5;
+}
+
+.svgSection {
+    width: 100vw;
+    height: 143px;
+    top: 92.5vh;
+    position: absolute;
+    overflow: hidden;
+}
+
+.svgAccueil {
+    position: absolute;
+    width: 1000vh;
+}
+
 #about {
     width: 100%;
     display: flex;
     font-family: 'Source Serif Pro', serif;
+    flex-wrap: wrap;
     background-color: rgba(8, 96, 102, 0.336);
 }
 
-#about img {
+#about div:first-of-type {
     width: 50%;
 }
 
-#about div {
+#about div img {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+#about div:last-of-type {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -102,7 +151,7 @@ a:link {
 
 #content {
     font-family: 'Source Serif Pro', serif;
-    margin-top: 5%;
+    margin-top: 10%;
 }
 
 #content h2 {
@@ -147,14 +196,17 @@ a:link {
 .card {
     min-width: 300px;
     max-width: 300px;
-    min-height: 400px;
-    max-height: 400px;
+    min-height: 420px;
+    max-height: 420px;
     background-color: rgba(8, 96, 102, 0.336);
     box-shadow: 14px 16px 40px -1px rgba(174, 174, 174, 0.66);
     -webkit-box-shadow: 14px 16px 40px -1px rgba(174, 174, 174, 0.66);
     -moz-box-shadow: 14px 16px 40px -1px rgba(174, 174, 174, 0.66);
     margin: 15px;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card a {
@@ -163,15 +215,17 @@ a:link {
 
 .card .card1 {
     width: 100%;
-    text-align: center;
     background-color: white;
     max-height: 200px;
-    overflow: hidden
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card img {
     max-width: 100%;
-    min-height: 100%;
+    min-height: 220px;
 }
 
 .card div {
@@ -180,7 +234,7 @@ a:link {
 
 .card h4 {
     position: absolute;
-    top: -30%;
+    top: -25%;
     left: 74%;
 }
 
@@ -190,22 +244,6 @@ a:link {
 
 .card p {
     margin: 5% 5% 5% 10%;
-}
-
-footer {
-    margin-top: 5%;
-    padding: 5px;
-    text-align: center;
-    background-color: rgb(8, 96, 102);
-    font-family: 'Source Serif Pro', serif;
-}
-
-footer h4 {
-    margin: 15px 0 15px 0;
-}
-
-footer p {
-    margin: 15px 0 0 0;
 }
 
 /***************************************************************************/
@@ -299,6 +337,18 @@ footer p {
 
 /***************************************************************************/
 
+.insertPlat {
+    margin: 2% 5%;
+}
+
+.insertPlat a {
+    background-color: rgb(8, 96, 102);
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    font-size: large;
+}
+
 .card .adminBtn {
     display: flex;
     justify-content: space-around;
@@ -309,6 +359,104 @@ footer p {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     padding: 2px 4px 0px 4px;
+}
+
+.card .adminBtn button input {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.card .adminBtn button {
+    vertical-align: middle;
+}
+
+.card .adminBtn button, .card .adminBtn button input {
+    padding: 0;
+    margin: 0;
+    border: none;
+    width: 5px;
+    height: 5px;
+    margin-bottom: 10px;
+}
+
+.card .adminBtn form {
+    background-color: rgb(255, 255, 255);
+    padding: 2px 12px 0px 4px;
+}
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/*************************  PAGE FOOTER****************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+footer {
+    margin-top: 5%;
+    padding: 5px 5px 0 5px;
+    text-align: center;
+    overflow: hidden;
+    color: blacks;
+    font-family: 'Source Serif Pro', serif;
+}
+
+footer h4 {
+    margin: 15px 0 15px 0;
+}
+
+footer p {
+    margin: 15px 0 0 0;
+}
+
+footer .biduleFooter {
+    margin-top: 1%;
+    width: 300%;
+    margin-left: -100%;
+}
+
+footer .biduleFooter svg {
+    vertical-align: bottom;
+}
+
+footer form input {
+    width: 50%;
+    background-color: rgba(8, 96, 102, 0.336);
+    border: none;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+}
+
+footer form button {
+    width: 10%;
+    border: none;
+    height: 31px;
+    position: absolute;
+    left: 70%;
+    background-color: rgb(133, 133, 133);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 /***************************************************************************/
@@ -338,27 +486,170 @@ footer p {
 /***************************************************************************/
 
 #insert {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 110vh;
+    margin-top: 15%;
+    min-height: 80vh;
     width: 100%;
 }
 
-#insert div {
+#insert .titleInsert {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2% 0 2% 0;
+}
+
+#insert .titleInsert label, #insert .titleInsert input {
+    width: 60%;
+}
+
+#insert .contentInsert {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#insert .rightInsert, #insert .leftInsert {
+    width: 45%;
+}
+
+#insert .leftInsert .btnInsert {
+    width: 100%;
     text-align: center;
+    margin: 1%;
+}
+
+#insert .leftInsert button {
+    width: 45%;
+    background-color: rgb(8, 96, 102);
+    color: rgb(255, 255, 255);
+    font-size: x-large;
+    padding: 5px;
+    font-family: 'Sansita', sans-serif;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#insert .description textarea {
+    min-height: 70px;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+#insert .infoInsert {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 2% 0 2% 0;
+}
+
+#insert .pictureInsert div {
+    height: 250px;
+    width: 100%;
+    text-align: center;
+    border: 1px dotted rgb(168, 168, 168);
+    border-radius: 5px;
+}
+
+#insert .pictureInsert img {
+    height: 100%;
 }
 
 #insert input, #insert select, #insert textarea {
     height: 2rem;
-    width: 150%;
-    margin: 10px;
+    width: 100%;
     border-radius: 5px;
     border: 1px solid rgb(168, 168, 168);
-    padding: 5px 0 5px 15px;
 }
 
-#insert .description #cke_editor1 {
-    min-width: 900px;
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/*************************  PAGE VU  ARTICLE ****************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+#mainArticle {
+    display: flex;
+    font-family: 'Source Serif Pro', serif;
+}
+
+#mainArticle section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+#mainArticle .imageArticle {
+    min-width: 100%;
+    text-align: center;
+    background-color: rgb(8, 96, 102);
+    padding: 1% 0 1% 0;
+}
+
+#mainArticle .imageArticle img {
+    max-height: 500px;
+}
+
+#mainArticle .titreArticle {
+    width: 60%;
+}
+
+#mainArticle .titreArticle h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+#mainArticle .titreArticle .pratiqueArticle {
+    display: flex;
+    justify-content: end;
+}
+
+#mainArticle .titreArticle .pratiqueArticle p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#mainArticle .titreArticle .pratiqueArticle strong {
+    font-weight: bold;
+}
+
+#mainArticle .titreArticle .descriptionArticle {
+    font-size: 1.5rem;
+}
+
+#mainArticle .contentArticle {
+    width: 70%;
+}
+
+#mainArticle .timeArticle {
+    min-width: 100%;
+}
+
+#mainArticle .timeArticle p {
+    text-align: end;
+    margin: 2%;
 }

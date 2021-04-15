@@ -51,6 +51,4 @@ window.onload = function () {
     addEventListenerList(typeOption, 'click', 'type');
 
 
-
-
 }

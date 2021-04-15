@@ -56,7 +56,7 @@
                 </select>
             </div>
         </div>
-        <div>
+        <div class="insertPlat">
             <a href="?page=insertContent">Ajouter plat </a>
         </div>
         <div class="contentCard">
@@ -68,13 +68,15 @@
                 for ($i = 0; $i < $count; $i++) :
             ?>
                     <div class="card <?php echo $result[$i]["type"] . " " . $result[$i]["speciality"] . " " . $result[$i]["practice"] ?>">
-                        <a href="#">
+                        <a href="?page=article&vu=<?php echo $result[$i]["id"] ?>">
                             <div class="card1">
                                 <img src="<?php echo $result[$i]["picutre"] ?>" alt="">
                             </div>
                             <div class="card2">
-                                <h3><?php echo $result[$i]["name"] ?></h3>
-                                <h4><?php echo $result[$i]["type"] ?></h4>
+                                <div>
+                                    <h3><?php echo $result[$i]["name"] ?></h3>
+                                    <h4><?php echo $result[$i]["type"] ?></h4>
+                                </div>
                                 <p><?php echo $result[$i]["description"] ?></p>
                             </div>
                         </a>
