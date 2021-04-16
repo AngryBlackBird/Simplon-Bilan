@@ -1,0 +1,703 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@300&display=swap');
+body {
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+    display: none;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: rgb(8, 96, 102);
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+}
+
+header svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 25px 0px;
+}
+
+header img {
+    width: 125px;
+    margin: 0 0 0 25px;
+}
+
+header .nav1 {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: space-between;
+}
+
+header .nav1 div:last-of-type a {
+    background-color: black;
+    color: rgb(251, 252, 250);
+    font-size: x-large;
+    font-family: 'Sansita', sans-serif;
+    margin: 25px;
+    padding: 1px 15px 5px 15px;
+}
+
+header div:last-of-type a:link {
+    text-decoration: none;
+}
+
+#home .contentHome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+.homePict {
+    position: absolute;
+    top: 15%;
+    width: 700px;
+}
+
+.homePict img {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+}
+
+.homePict img:first-child {
+    opacity: 1;
+}
+
+#home h1 {
+    color: rgb(8, 96, 102);
+    font-family: 'Playfair Display', serif;
+    font-size: 7rem;
+    margin: 0;
+}
+
+#home a {
+    background-color: rgb(8, 96, 102);
+    color: rgb(251, 252, 250);
+    font-size: x-large;
+    font-family: 'Sansita', sans-serif;
+    padding: 1px 15px 5px 15px;
+    margin-top: 45px;
+}
+
+#home .bgColor {
+    position: absolute;
+    height: 100vh;
+    width: 50%;
+    background-color: #f1efde;
+    z-index: -5;
+}
+
+.svgSection {
+    width: 100vw;
+    height: 143px;
+    top: 92.5vh;
+    position: absolute;
+    overflow: hidden;
+}
+
+.svgAccueil {
+    position: absolute;
+    width: 1000vh;
+}
+
+#about {
+    width: 100%;
+    display: flex;
+    font-family: 'Source Serif Pro', serif;
+    flex-wrap: wrap;
+    background-color: rgba(8, 96, 102, 0.336);
+}
+
+#about div:first-of-type {
+    width: 50%;
+}
+
+#about div img {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+#about div:last-of-type {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#about h2 {
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+
+#about p {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 15%;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#myTopnav2 {
+    display: none;
+    color: black !important;
+    background-color: rgb(255, 255, 255);
+}
+
+#myTopnav2 a {
+    background-color: rgba(8, 96, 102, 0.336);
+}
+
+#content {
+    font-family: 'Source Serif Pro', serif;
+    margin-top: 10%;
+}
+
+#content h2 {
+    text-align: center;
+    font-size: 3.5rem;
+}
+
+#content .select {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+    font-size: large;
+}
+
+#content select {
+    padding: 5px;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(8, 96, 102);
+    font-size: large;
+    -moz-appearance: none;
+    /* Firefox */
+    -webkit-appearance: none;
+    /* Safari and Chrome */
+    appearance: none;
+}
+
+#content .filtre {
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+.contentCard {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 5%;
+}
+
+.card {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 420px;
+    max-height: 420px;
+    background-color: rgba(8, 96, 102, 0.336);
+    box-shadow: 14px 16px 40px -1px rgba(174, 174, 174, 0.66);
+    -webkit-box-shadow: 14px 16px 40px -1px rgba(174, 174, 174, 0.66);
+    -moz-box-shadow: 14px 16px 40px -1px rgba(174, 174, 174, 0.66);
+    margin: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card a {
+    color: black;
+}
+
+.card .card1 {
+    width: 100%;
+    background-color: white;
+    max-height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img {
+    max-width: 100%;
+    min-height: 220px;
+}
+
+.card div {
+    position: relative;
+}
+
+.card h4 {
+    position: absolute;
+    top: -25%;
+    left: 74%;
+}
+
+.card h3 {
+    margin: 5% 5% 5% 15%;
+    max-width: 50%;
+}
+
+.card p {
+    margin: 5% 5% 5% 10%;
+}
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/*************************  PAGE CONNECTION ********************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+#connect {
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#connect form {
+    width: 100%;
+    text-align: center;
+}
+
+#connect div {
+    width: 100%;
+    text-align: center;
+}
+
+#connect input {
+    height: 2rem;
+    width: 60%;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(168, 168, 168);
+    padding: 5px 0 5px 15px;
+}
+
+#connect button {
+    width: 30%;
+    padding: 5px 0 5px 0;
+    color: white;
+    font-family: 'Source Serif Pro', serif;
+    font-size: large;
+    background-color: rgb(8, 96, 102);
+    margin: 2%;
+    text-align: center;
+    border: none;
+}
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/*************************  PAGE ADMIN *************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+.insertPlat {
+    margin: 2% 5%;
+}
+
+.insertPlat a {
+    background-color: rgb(8, 96, 102);
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+    font-size: large;
+}
+
+.card .adminBtn {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px;
+}
+
+.card .adminBtn a {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 2px 4px 0px 4px;
+}
+
+.card .adminBtn button input {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.card .adminBtn button {
+    vertical-align: middle;
+}
+
+.card .adminBtn button, .card .adminBtn button input {
+    padding: 0;
+    margin: 0;
+    border: none;
+   
+}
+
+.card .adminBtn form {
+    background-color: rgb(255, 255, 255);
+    padding: 2px 12px 0px 4px;
+}
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/*************************  PAGE FOOTER****************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+footer {
+    margin-top: 5%;
+    padding: 5px 5px 0 5px;
+    text-align: center;
+    overflow: hidden;
+    color: blacks;
+    font-family: 'Source Serif Pro', serif;
+}
+
+footer h4 {
+    margin: 15px 0 15px 0;
+}
+
+footer p {
+    margin: 15px 0 0 0;
+}
+
+footer .biduleFooter {
+    margin-top: 1%;
+    width: 300%;
+    margin-left: -100%;
+}
+
+footer .biduleFooter svg {
+    vertical-align: bottom;
+}
+
+footer form input {
+    width: 50%;
+    background-color: rgba(8, 96, 102, 0.336);
+    border: none;
+    height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+}
+
+footer form button {
+    width: 10%;
+    border: none;
+    height: 31px;
+    position: absolute;
+    left: 70%;
+    background-color: rgb(133, 133, 133);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/*************************  PAGE INSERT CONTENT ****************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+#insert {
+    margin-top: 15%;
+    min-height: 80vh;
+    width: 100%;
+}
+
+#insert .titleInsert {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2% 0 2% 0;
+}
+
+#insert .titleInsert label, #insert .titleInsert input {
+    width: 60%;
+}
+
+#insert .contentInsert {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#insert .rightInsert, #insert .leftInsert {
+    width: 45%;
+}
+
+#insert .leftInsert .btnInsert {
+    width: 100%;
+    text-align: center;
+    margin: 1%;
+}
+
+#insert .leftInsert button {
+    width: 45%;
+    background-color: rgb(8, 96, 102);
+    color: rgb(255, 255, 255);
+    font-size: x-large;
+    padding: 5px;
+    font-family: 'Sansita', sans-serif;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#insert .description textarea {
+    min-height: 70px;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+#insert .infoInsert {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 2% 0 2% 0;
+}
+
+#insert .pictureInsert div {
+    height: 250px;
+    width: 100%;
+    text-align: center;
+    border: 1px dotted rgb(168, 168, 168);
+    border-radius: 5px;
+}
+
+#insert .pictureInsert img {
+    height: 100%;
+}
+
+#insert input, #insert select, #insert textarea {
+    height: 2rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(168, 168, 168);
+}
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/*************************  PAGE VU  ARTICLE ****************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+/***************************************************************************/
+
+#mainArticle {
+    display: flex;
+    font-family: 'Source Serif Pro', serif;
+}
+
+#mainArticle section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+#mainArticle .imageArticle {
+    min-width: 100%;
+    text-align: center;
+    background-color: rgb(8, 96, 102);
+    padding: 1% 0 1% 0;
+}
+
+#mainArticle .imageArticle img {
+    max-height: 500px;
+}
+
+#mainArticle .titreArticle {
+    width: 60%;
+}
+
+#mainArticle .titreArticle h1 {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+#mainArticle .titreArticle .pratiqueArticle {
+    display: flex;
+    justify-content: end;
+    flex-wrap: wrap;
+}
+
+#mainArticle .titreArticle .pratiqueArticle p {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#mainArticle .titreArticle .pratiqueArticle strong {
+    font-weight: bold;
+}
+
+#mainArticle .titreArticle .descriptionArticle {
+    font-size: 1.5rem;
+}
+
+#mainArticle .contentArticle {
+    width: 70%;
+}
+
+#mainArticle .timeArticle {
+    min-width: 100%;
+}
+
+#mainArticle .timeArticle p {
+    text-align: end;
+    margin: 2%;
+}

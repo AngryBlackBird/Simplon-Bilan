@@ -1,0 +1,116 @@
+@media (max-width: 1400px) {
+    #about {
+        display: block;
+        padding-top: 5%;
+    }
+    #about div:first-of-type {
+        width: 100%;
+        text-align: center;
+    }
+    #about div img {
+        min-width: 50%;
+        max-width: 50%;
+    }
+    #about div:last-of-type {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #about h2 {
+        margin-left: 10%;
+        margin-bottom: 5%;
+    }
+    #about p {
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-bottom: 5%;
+        font-size: x-large;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 800px) {
+    .homePict {
+        top: 25%;
+        width: 500px;
+    }
+    .adminBtn a:last-of-type {
+        display: none;
+    }
+    .insertPlat  {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .topnav {
+        display: block i !important;
+    }
+    .topnav a:not(:first-child) {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+    header .nav1 {
+        display: none;
+    }
+    .topnav.responsive {
+        position: relative;
+    }
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .homePict {
+        top: 35%;
+        width: 250px;
+    }
+    #home h1 {
+        color: rgb(8, 96, 102);
+        font-family: 'Playfair Display', serif;
+        font-size: 4rem;
+        margin: 0;
+    }
+    .svgSection {
+        display: none;
+    }
+    #about div:first-of-type {
+        width: 100%;
+    }
+    #about div img {
+        min-width: 100%;
+        max-width: 100%;
+    }
+    #about h2 {
+        margin-left: 10%;
+        margin-bottom: 5%;
+    }
+    #about p {
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-bottom: 5%;
+        font-size: large;
+        font-weight: bold;
+    }
+    #myTopnav2 {
+        display: block;
+    }
+    #content .select {
+        display: none;
+    }
+    #myTopnav2 .filtre {
+        margin-left: 0;
+    }
+    footer .biduleFooter {
+        width: 700%;
+    }
+}
