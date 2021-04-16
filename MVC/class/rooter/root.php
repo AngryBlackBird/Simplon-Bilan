@@ -5,7 +5,7 @@ class root
     public function __construct()
     {
         include_once "MVC/class/controller/formController.php";
-        include_once "MVC/class/controller/contentController.php";
+        include_once "MVC/class/controller/traitement.php";
 
 
         include_once "MVC/class/view/formView.php";

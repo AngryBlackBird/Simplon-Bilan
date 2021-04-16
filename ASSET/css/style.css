@@ -4,6 +4,42 @@
 body {
     margin: 0;
     background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    width: 100%;
+    display: none;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: rgb(8, 96, 102);
+    color: white;
+}
+
+.topnav .icon {
+    display: none;
 }
 
 header {
@@ -29,14 +65,16 @@ header img {
     margin: 0 0 0 25px;
 }
 
-nav {
-    height: 8vh;
+header .nav1 {
+    width: 100%;
+    height: 15vh;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
+    align-content: space-between;
 }
 
-nav a {
+header .nav1 div:last-of-type a {
     background-color: black;
     color: rgb(251, 252, 250);
     font-size: x-large;
@@ -45,7 +83,7 @@ nav a {
     padding: 1px 15px 5px 15px;
 }
 
-a:link {
+header div:last-of-type a:link {
     text-decoration: none;
 }
 
@@ -147,6 +185,16 @@ a:link {
     margin-bottom: 15%;
     font-size: x-large;
     font-weight: bold;
+}
+
+#myTopnav2 {
+    display: none;
+    color: black !important;
+    background-color: rgb(255, 255, 255);
+}
+
+#myTopnav2 a {
+    background-color: rgba(8, 96, 102, 0.336);
 }
 
 #content {
@@ -626,6 +674,7 @@ footer form button {
 #mainArticle .titreArticle .pratiqueArticle {
     display: flex;
     justify-content: end;
+    flex-wrap: wrap;
 }
 
 #mainArticle .titreArticle .pratiqueArticle p {

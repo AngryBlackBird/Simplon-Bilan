@@ -34,12 +34,12 @@ class contentController
         if (isset($_GET["delete"])) {
             $content = new contentModel;
             $data  = $content->viewOneContentById($_GET["delete"]);
-            var_dump($data["picutre"]);
             unlink($data["picutre"]);
 
 
             $content = new contentModel;
             $delete  = $content->deleteContentByMail($_GET["delete"]);
+            header("Location: ?page=admin");
             return $delete;
         }
     }

@@ -5,7 +5,7 @@ class adminView
     public function adminAllView($result, $resultType)
     {
 
-        include_once "MVC/vues/admin.php";
+        include_once "MVC/vues/allAdmin.php";
     }
 
     public function adminHeader()
