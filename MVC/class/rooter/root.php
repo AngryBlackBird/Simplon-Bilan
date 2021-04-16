@@ -41,23 +41,24 @@ class root
     {
         if (isset($_SESSION["pseudo"])) {
 
-
+           
             $controller = new contentController;
             $view = new adminView();
             $view->adminHeader();
 
             if (isset($_GET["delete"])) {
-
                 $delete = $controller->deleteContent();
             } else if (isset($_GET["modify"])) {
                 $message = $controller->updateOneContent();
                 $oneContent = $controller->viewOneContent();
                 $view->modifyContent($oneContent, $message);
             } else {
+                $check1 = new contentController;
+                $check = $check1->publishedContent();
 
-                $check = $controller->publishedContent();
+                $controller1 = new contentController;
+                $result = $controller1->viewAllContent();
 
-                $result = $controller->viewAllContent();
                 $controller = new contentController;
                 $resultType = $controller->viewAllFilterByDistinct();
 

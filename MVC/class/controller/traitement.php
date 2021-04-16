@@ -40,6 +40,7 @@ class contentController
             $content = new contentModel;
             $delete  = $content->deleteContentByMail($_GET["delete"]);
             header("Location: ?page=admin");
+
             return $delete;
         }
     }
@@ -68,7 +69,7 @@ class contentController
 
 
             // Constantes
-            $target = "../Bilan/imgUpload/";    // Repertoire cible
+            $target = "./imgUpload/";    // Repertoire cible
             // Tableaux de donnees
             $tabExt = array('jpg', 'gif', 'png', 'jpeg');    // Extensions autorisees
             /************************************************************
@@ -199,7 +200,7 @@ class contentController
         }
 
 
-        return /*$message*/;
+        return $message;
     }
 
     public function publishedContent()
@@ -208,10 +209,12 @@ class contentController
 
             $content = new contentModel;
             $data  = $content->publishedContentON($_POST["checkId"]);
+
         } else if (isset($_POST["checkId"])) {
 
             $content = new contentModel;
             $data  = $content->publishedContentOFF($_POST["checkId"]);
+
         }
     }
     public function article()

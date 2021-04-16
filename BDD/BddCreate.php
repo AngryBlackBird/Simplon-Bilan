@@ -48,12 +48,13 @@
         id INT NOT NULL AUTO_INCREMENT, 
         name VARCHAR(30),
         description VARCHAR(255),
-        content VARCHAR(255),
+        content LONGTEXT,
         practice VARCHAR(30),
         speciality VARCHAR(30),
         type VARCHAR(30),
         picutre VARCHAR(255),
         time DATE,
+        published INT,
         PRIMARY KEY (id))");
     } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());

@@ -5,7 +5,7 @@
             <div class="filtre">
 
                 <label for="Pratiques-select">Votre pratique allimentaire :</label>
-                <select id="selectPractice">
+                <select class="selectPractice">
                     <option value="" disabled selected>Pratique allimentaire</option>
 
                     <?php if (isset($resultType)) :
@@ -24,7 +24,7 @@
             <div class="filtre">
                 <label for="Pratiques-select">Votre spécialité : </label>
 
-                <select id="selectSpeciality">
+                <select class="selectSpeciality">
                     <option value="" disabled selected>Votre specialité</option>
                     <?php if (isset($resultType)) :
                         $count2 = count($resultType[2]);
@@ -41,7 +41,7 @@
             <div class="filtre">
                 <label for="Pratiques-select">Votre type de plat :</label>
 
-                <select id="selectType">
+                <select class="selectType">
                     <option value="" disabled selected>Type de plat</option>
 
                     <?php if (isset($resultType)) :
@@ -83,7 +83,7 @@
                         <div class="adminBtn">
                             <a href="?page=admin&delete=<?php echo $result[$i]["id"] ?>">Supprimer</a>
                             <a href="?page=admin&modify=<?php echo $result[$i]["id"] ?>">Modifier</a>
-                            <form action="" method="POST">
+                            <form action="?page=admin" method="POST">
                                 <label for="check">Publier </label>
                                 <input type="text" value="<?php echo $result[$i]["id"] ?>" name="checkId" style="display : none" />
                                 <button type="sumbit">

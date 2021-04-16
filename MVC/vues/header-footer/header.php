@@ -26,7 +26,7 @@
 
 		<nav class="nav1">
 			<div>
-				<a href="/Bilan">
+				<a href="/">
 					<img src="ASSET/img/tricatel.png" alt="">
 				</a>
 			</div>
@@ -48,13 +48,13 @@
 			</svg>
 			<div>
 				<?php if (isset($_SESSION["pseudo"])) : ?>
-					<a href="/Bilan">Accueil</a>
+					<a href="/">Accueil</a>
 					<a href="?page=admin">Gestion</a>
 					<a href="?page=deconnect">Se déconnecter</a>
 
 				<?php
 				else : ?>
-					<a href="/Bilan">Accueil</a>
+					<a href="/">Accueil</a>
 					<a href="?page=connect">Se connecter</a>
 				<?php
 				endif; ?>
@@ -63,13 +63,13 @@
 		<div class="topnav" id="myTopnav">
 			<a href="#home" class="active">TRICATEL</a>
 			<?php if (isset($_SESSION["pseudo"])) : ?>
-				<a href="/Bilan">Accueil</a>
+				<a href="/">Accueil</a>
 				<a href="?page=admin">Gestion</a>
 				<a href="?page=deconnect">Se déconnecter</a>
 
 			<?php
 			else : ?>
-				<a href="/Bilan">Accueil</a>
+				<a href="/">Accueil</a>
 				<a href="?page=connect">Se connecter</a>
 			<?php
 			endif; ?>

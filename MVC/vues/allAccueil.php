@@ -1,15 +1,13 @@
-
-
 <main>
     <section id="home">
         <div class="bgColor"></div>
         <div class="contentHome">
             <div class="homePict">
-                <img class="imgHome" src="ASSET/img/home1" alt="home1">
-                <img class="imgHome" src="ASSET/img/home2" alt="home2">
-                <img class="imgHome" src="ASSET/img/home3" alt="home3">
-                <img class="imgHome" src="ASSET/img/home4" alt="home4">
-                <img class="imgHome" src="ASSET/img/home5" alt="home5">
+                <img class="imgHome" src="ASSET/img/home1.png" alt="home1">
+                <img class="imgHome" src="ASSET/img/home2.png" alt="home2">
+                <img class="imgHome" src="ASSET/img/home3.png" alt="home3">
+                <img class="imgHome" src="ASSET/img/home4.png" alt="home4">
+                <img class="imgHome" src="ASSET/img/home5.png" alt="home5">
             </div>
 
             <h1>TRICATEL</h1>
@@ -21,7 +19,7 @@
     </section>
     <section id="about">
         <div>
-            <img src="ASSET/img/chef" alt="chef">
+            <img src="ASSET/img/chef.jpg" alt="chef">
         </div>
         <div>
             <h2>Qui suis je ?</h2>
@@ -31,13 +29,14 @@
 
     <section id="content">
         <h2>Nos plats</h2>
+
         <div class="topnav" id="myTopnav2">
             <a href="#home" class="active">FILTRE</a>
 
             <a>
                 <div class="filtre">
                     <label for="Pratiques-select">Votre pratique allimentaire :</label>
-                    <select id="selectPractice">
+                    <select class="selectPractice">
                         <option value="" disabled selected>Pratique</option>
 
                         <?php if (isset($resultType)) :
@@ -56,7 +55,7 @@
                 <div class="filtre">
                     <label for="Pratiques-select">Votre spécialité : </label>
 
-                    <select id="selectSpeciality">
+                    <select class="selectSpeciality">
                         <option value="" disabled selected>Votre specialité</option>
                         <?php if (isset($resultType)) :
                             $count2 = count($resultType[2]);
@@ -74,7 +73,7 @@
                 <div class="filtre">
                     <label for="Pratiques-select">Votre type de plat :</label>
 
-                    <select id="selectType">
+                    <select class="selectType">
                         <option value="" disabled selected>Type de plat</option>
 
                         <?php if (isset($resultType)) :
@@ -98,7 +97,7 @@
         <div class="select">
             <div class="filtre">
                 <label for="Pratiques-select">Votre pratique allimentaire :</label>
-                <select id="selectPractice">
+                <select class="selectPractice">
                     <option value="" disabled selected>Pratiqueallimentaire</option>
 
                     <?php if (isset($resultType)) :
@@ -115,7 +114,7 @@
             <div class="filtre">
                 <label for="Pratiques-select">Votre spécialité : </label>
 
-                <select id="selectSpeciality">
+                <select class="selectSpeciality">
                     <option value="" disabled selected>Votre specialité</option>
                     <?php if (isset($resultType)) :
                         $count2 = count($resultType[2]);
@@ -131,7 +130,7 @@
             <div class="filtre">
                 <label for="Pratiques-select">Votre type de plat :</label>
 
-                <select id="selectType">
+                <select class="selectType">
                     <option value="" disabled selected>Type de plat</option>
 
                     <?php if (isset($resultType)) :

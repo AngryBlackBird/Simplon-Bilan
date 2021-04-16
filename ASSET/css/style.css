@@ -288,6 +288,7 @@ header div:last-of-type a:link {
 
 .card h3 {
     margin: 5% 5% 5% 15%;
+    max-width: 50%;
 }
 
 .card p {
@@ -422,9 +423,7 @@ header div:last-of-type a:link {
     padding: 0;
     margin: 0;
     border: none;
-    width: 5px;
-    height: 5px;
-    margin-bottom: 10px;
+   
 }
 
 .card .adminBtn form {

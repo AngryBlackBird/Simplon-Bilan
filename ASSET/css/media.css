@@ -45,7 +45,7 @@
 
 @media screen and (max-width: 750px) {
     .topnav {
-        display: block;
+        display: block i !important;
     }
     .topnav a:not(:first-child) {
         display: none;
