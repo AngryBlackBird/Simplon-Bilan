@@ -18,7 +18,7 @@
 
 				echo "<p>" . $result["message"] . "</p>";
 			?>
-			<p>Mot de passe oublier ? <a style="color:red!important" href="?page=recoveryPass">Réinitialiser mot de passe. </a></p>
+			<p>Mot de passe oublier ? <a style="color:red!important" href="#">Réinitialiser mot de passe. </a></p>
 
 		</form>
 	</section>
