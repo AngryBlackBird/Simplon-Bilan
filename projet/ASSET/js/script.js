@@ -7,6 +7,7 @@ window.onload = function () {
         function getStyle(a, b) {
             return window.getComputedStyle(b, null)[a];
         }
+
         style = getStyle('display', div);
 
     }
@@ -15,26 +16,18 @@ window.onload = function () {
     let speciality = document.getElementsByClassName("selectSpeciality")
     let practice = document.getElementsByClassName("selectPractice")
 
-    let typeOption = type[0].querySelectorAll("option")
-    let specialityOption = speciality[0].querySelectorAll("option")
-    let practiceOption = practice[0].querySelectorAll("option")
-
 
     if (style === "none") {
-        typeOption = type[1].querySelectorAll("option")
-        specialityOption = speciality[1].querySelectorAll("option")
-        practiceOption = practice[1].querySelectorAll("option")
+        type = type[1]
+        speciality = speciality[1]
+        practice = practice[1]
     } else {
-
-        typeOption = type[0].querySelectorAll("option")
-        specialityOption = speciality[0].querySelectorAll("option")
-        practiceOption = practice[0].querySelectorAll("option")
-
+        type = type[0]
+        speciality = speciality[0]
+        practice = practice[0]
     }
 
     console.log(div)
-
-
 
 
     let allCard = document.querySelectorAll('.card')
@@ -46,17 +39,17 @@ window.onload = function () {
     ]
 
     function filterController(data) {
-
-        if (data["target"].parentNode.className == (practice[0].className || practice[1].className)) {
+        console.log(data.className)
+        if (data.className == (practice.className )) {
             console.log("ok")
-            array[2].splice(1, 1, data["target"].value)
+            array[2].splice(1, 1, data["value"])
         }
 
-        if (data["target"].parentNode.className == (type[0].className || type[1].className)) {
-            array[1].splice(1, 1, data["target"].value)
+        if (data.className == (type.className)) {
+            array[1].splice(1, 1, data["value"])
         }
-        if (data["target"].parentNode.className == (speciality[0].className || speciality[1].className)) {
-            array[0].splice(1, 1, data["target"].value)
+        if (data.className == (speciality.className)) {
+            array[0].splice(1, 1, data["value"])
         }
 
         for (var i = 0, len = allCard.length; i < len; i++) {
@@ -68,18 +61,15 @@ window.onload = function () {
         }
     }
 
+    practice.addEventListener("change", function () {
+        filterController(practice)
+    }, false)
 
-    function addEventListenerList(list, event, filter) {
-
-        for (var i = 0, len = list.length; i < len; i++) {
-            list[i].addEventListener(event, filterController.bind(list[i]), false)
-        }
-    }
-
-
-    addEventListenerList(practiceOption, 'click', 'practice');
-    addEventListenerList(specialityOption, 'click', 'speciality');
-    addEventListenerList(typeOption, 'click', 'type');
-
+    speciality.addEventListener("change", function () {
+        filterController(speciality)
+    }, false)
+    type.addEventListener("change", function () {
+        filterController(type)
+    }, false)
 
 }

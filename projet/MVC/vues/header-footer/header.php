@@ -13,9 +13,7 @@
 	<title>TRICATEL</title>
 	<script src="https://cdn.ckeditor.com/4.16.0/basic/ckeditor.js"></script>
 
-	<script src="ASSET/js/script.js" defer></script>
-	<script src="ASSET/js/scriptInsert.js" defer></script>
-	<script src="ASSET/js/scriptHome.js" defer></script>
+
 
 
 </head>

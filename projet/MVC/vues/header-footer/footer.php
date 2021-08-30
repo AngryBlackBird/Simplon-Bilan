@@ -1,3 +1,8 @@
+
+<script src="ASSET/js/script.js" ></script>
+<script src="ASSET/js/scriptInsert.js" ></script>
+<script src="ASSET/js/scriptHome.js" ></script>
+
 <footer>
 
     <h4>Tenez-vous au courant de ce qui se passe à Tricatel</h4>
@@ -1441,6 +1446,7 @@
         </svg>
     </div>
 </footer>
+
 </body>
 
 </html>
